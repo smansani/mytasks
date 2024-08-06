@@ -1,0 +1,37 @@
+.noteitem {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.description {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.date {
+    font-size: 15px;
+    color: aquamarine;
+    margin-bottom: 10px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+}
+
+.fa-pen-to-square, .fa-square-check {
+    cursor: pointer;
+}

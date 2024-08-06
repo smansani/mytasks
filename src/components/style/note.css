@@ -1,0 +1,51 @@
+.container {
+  transition: filter 0.3s;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  filter: blur(5px);
+  z-index: 1000;
+}
+
+.addtask-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+}
+
+.add {
+  position: fixed;
+  right: 10%;
+  top: 90%;
+  transform: translateY(-50%);
+}
+
+.addbutton {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 100px;
+  border-style: solid;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-width: 1px;
+  align-items: center;
+}
+
+.plus:hover,
+.addbutton:hover {
+  background-color: black;
+  color: white;
+}
