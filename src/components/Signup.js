@@ -12,7 +12,7 @@ export default function Signup() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch("/api/auth/createuser", {
+        const response = await fetch("https://smansani.netlify.app/api/auth/createuser", {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
