@@ -3,7 +3,7 @@ import TaskContext from './taskcontext';
 import alertcontext from './alertcontext';
 
 const TaskState = (props) => {
-  //const host = "http://localhost:5000";
+  const host = "https://smansani.netlify.app";
   const [tasks, setTasks] = useState([]);
   const [user, setUser] = useState(''); // Added state for user
   const showalert = useContext(alertcontext);
