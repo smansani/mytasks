@@ -8,8 +8,8 @@ const Navbar = () => {
     const navigate = useNavigate();
     const isLoggedIn = localStorage.getItem('token'); 
     const { showalert } = useContext(alertcontext);
-    const{user}=useContext(taskcontext)
-
+    const{user}=useContext(taskcontext);
+    console.log({user})
 
     const handleLogout = () => {
         localStorage.removeItem('token');

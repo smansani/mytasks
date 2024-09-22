@@ -5,7 +5,7 @@ import alertcontext from './alertcontext';
 
 const Login = () => {
     const [credentials, setCredentials] = useState({ email: "", password: "" });
-    const { getTasks } = useContext(TaskContext);
+    const { getTasks,getuser } = useContext(TaskContext);
     let navigate = useNavigate();
     const{showalert}=useContext(alertcontext);
 
@@ -24,6 +24,7 @@ const Login = () => {
             // Save the auth token and redirect
             localStorage.setItem('token', json.authtoken);
             getTasks();
+            getuser();
             navigate("/");
             setTimeout(()=>{
                 showalert("loged in successfully")

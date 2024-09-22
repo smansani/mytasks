@@ -125,6 +125,7 @@ const TaskState = (props) => {
       }
 
       const userData = await response.json();
+      console.log(userData);
       setUser(userData.name); // Set user state
     } catch (error) {
       console.error('Failed to fetch user:', error.message);
@@ -136,7 +137,7 @@ const TaskState = (props) => {
       getTasks();
       getuser();
     }
-  }, []); // Ensure this useEffect runs only once on component mount
+  }, []); 
 
   return (
     <TaskContext.Provider value={{ tasks, setTasks, addTask, updateTask, deleteTask, getTasks, getuser, user }}>

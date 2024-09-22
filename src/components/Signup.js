@@ -1,32 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import alertcontext from './alertcontext';
+import TaskContext from './taskcontext';
+
 
 export default function Signup() {
     const [credentials, setCredentials] = useState({ name: "", email: "", password: "" });
     let navigate = useNavigate();
+    const{showalert}=useContext(alertcontext);
+    const { getuser } = useContext(TaskContext);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const response = await fetch("http://localhost:5000/api/auth/createuser", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ name: credentials.name, email: credentials.email, password: credentials.password })
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ name: credentials.name, email: credentials.email, password: credentials.password })
         });
         const json = await response.json();
-        console.log(json);
+        console.log(json); 
+        
         if (json.success) {
-            localStorage.setItem('token', json.authtoken);
-            navigate("/");
-            setTimeout(()=>{
-                showalert("signed up successfully")
-              },3000);
+          localStorage.setItem('token', json.authtoken);
+          navigate("/");
+          getuser();
+          setTimeout(() => {
+            showalert("Signed up successfully!");
+          }, 3000);
         } else {
-            alert("user already exits");
-            navigate("/signup");
+          alert(json.error);
+          navigate("/signup");
         }
-    };
+      };
+      
 
     const onChange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value });

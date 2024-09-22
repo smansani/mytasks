@@ -1,5 +1,5 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useContext, useState} from 'react';
+//import { useNavigate } from 'react-router-dom';
 import TaskContext from './taskcontext';
 import Noteitem from './Noteitem';
 import './style/note.css';
@@ -7,11 +7,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const Note = () => {
-  const { tasks, addTask, getTasks} = useContext(TaskContext);
+  const { tasks, addTask} = useContext(TaskContext);
   const [handleAdd, setHandleAdd] = useState(false);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   const updateAdd = () => {
     setHandleAdd(true);
