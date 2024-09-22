@@ -10,7 +10,7 @@ const TaskState = (props) => {
 
   // Fetch all tasks
   const getTasks = async () => {
-    const url = `${host}/api/notes/fetchnotes`;
+    const url = `/api/notes/fetchnotes`;
     try {
       const response = await fetch(url, {
         headers: {
@@ -32,7 +32,7 @@ const TaskState = (props) => {
 
   // Add a new task
   const addTask = async (title, description) => {
-    const url = `${host}/api/notes/createnotes`;
+    const url = `/api/notes/createnotes`;
     try {
       const response = await fetch(url, {
         method: 'POST',
@@ -59,7 +59,7 @@ const TaskState = (props) => {
 
   // Update a task
   const updateTask = async (id, title, description) => {
-    const url = `${host}/api/notes/updateData/${id}`;
+    const url = `/api/notes/updateData/${id}`;
     try {
       const response = await fetch(url, {
         method: 'PUT',
@@ -86,7 +86,7 @@ const TaskState = (props) => {
 
   // Delete a task
   const deleteTask = async (id) => {
-    const url = `${host}/api/notes/deleteData/${id}`;
+    const url = `/api/notes/deleteData/${id}`;
     try {
       const response = await fetch(url, {
         method: 'DELETE',
@@ -110,7 +110,7 @@ const TaskState = (props) => {
   };
 
   const getuser = async () => {
-    const url = `${host}/api/auth/getuser`;
+    const url = `/api/auth/getuser`;
     try {
       const response = await fetch(url, {
         method: 'GET',
